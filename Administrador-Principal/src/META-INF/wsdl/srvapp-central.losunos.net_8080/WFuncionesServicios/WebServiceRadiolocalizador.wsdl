@@ -1,0 +1,861 @@
+<definitions name='WebServiceRadiolocalizadorService' targetNamespace='http://radiolocalizador.taxislibres.com/' xmlns='http://schemas.xmlsoap.org/wsdl/' xmlns:soap='http://schemas.xmlsoap.org/wsdl/soap/' xmlns:tns='http://radiolocalizador.taxislibres.com/' xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+ <types>
+  <xs:schema targetNamespace='http://radiolocalizador.taxislibres.com/' version='1.0' xmlns:tns='http://radiolocalizador.taxislibres.com/' xmlns:xs='http://www.w3.org/2001/XMLSchema'>
+   <xs:element name='buscarMovil' type='tns:buscarMovil'/>
+   <xs:element name='buscarMovilCali' type='tns:buscarMovilCali'/>
+   <xs:element name='buscarMovilCaliResponse' type='tns:buscarMovilCaliResponse'/>
+   <xs:element name='buscarMovilCien' type='tns:buscarMovilCien'/>
+   <xs:element name='buscarMovilCienResponse' type='tns:buscarMovilCienResponse'/>
+   <xs:element name='buscarMovilResponse' type='tns:buscarMovilResponse'/>
+   <xs:element name='cancelarServicio' type='tns:cancelarServicio'/>
+   <xs:element name='cancelarServicioCali' type='tns:cancelarServicioCali'/>
+   <xs:element name='cancelarServicioCaliResponse' type='tns:cancelarServicioCaliResponse'/>
+   <xs:element name='cancelarServicioResponse' type='tns:cancelarServicioResponse'/>
+   <xs:element name='configurarParametrosRadioloc' type='tns:configurarParametrosRadioloc'/>
+   <xs:element name='configurarParametrosRadiolocResponse' type='tns:configurarParametrosRadiolocResponse'/>
+   <xs:element name='enviarRadiolocalizador' type='tns:enviarRadiolocalizador'/>
+   <xs:element name='enviarRadiolocalizadorResponse' type='tns:enviarRadiolocalizadorResponse'/>
+   <xs:element name='funcionalidadHibrido' type='tns:funcionalidadHibrido'/>
+   <xs:element name='funcionalidadHibridoResponse' type='tns:funcionalidadHibridoResponse'/>
+   <xs:element name='imprimirListadoDisponibles' type='tns:imprimirListadoDisponibles'/>
+   <xs:element name='imprimirListadoDisponiblesResponse' type='tns:imprimirListadoDisponiblesResponse'/>
+   <xs:element name='listaVariables' type='tns:listaVariables'/>
+   <xs:element name='listaVariablesResponse' type='tns:listaVariablesResponse'/>
+   <xs:element name='listadoEnturnados' type='tns:listadoEnturnados'/>
+   <xs:element name='listadoEnturnadosResponse' type='tns:listadoEnturnadosResponse'/>
+   <xs:element name='listadoEnturnadosZona' type='tns:listadoEnturnadosZona'/>
+   <xs:element name='listadoEnturnadosZonaResponse' type='tns:listadoEnturnadosZonaResponse'/>
+   <xs:element name='modificarDatos' type='tns:modificarDatos'/>
+   <xs:element name='modificarDatosResponse' type='tns:modificarDatosResponse'/>
+   <xs:element name='modificarFormaTrabajoIndividual' type='tns:modificarFormaTrabajoIndividual'/>
+   <xs:element name='modificarFormaTrabajoIndividualResponse' type='tns:modificarFormaTrabajoIndividualResponse'/>
+   <xs:element name='modificarPlaca' type='tns:modificarPlaca'/>
+   <xs:element name='modificarPlacaResponse' type='tns:modificarPlacaResponse'/>
+   <xs:element name='movilesMemoria' type='tns:movilesMemoria'/>
+   <xs:element name='movilesMemoriaResponse' type='tns:movilesMemoriaResponse'/>
+   <xs:element name='obtenerRl' type='tns:obtenerRl'/>
+   <xs:element name='obtenerRlResponse' type='tns:obtenerRlResponse'/>
+   <xs:element name='procesarTrama' type='tns:procesarTrama'/>
+   <xs:element name='procesarTramaResponse' type='tns:procesarTramaResponse'/>
+   <xs:element name='timeOut' type='tns:timeOut'/>
+   <xs:element name='timeOutResponse' type='tns:timeOutResponse'/>
+   <xs:element name='ultimoDatoRL' type='tns:ultimoDatoRL'/>
+   <xs:element name='ultimoDatoRLResponse' type='tns:ultimoDatoRLResponse'/>
+   <xs:complexType name='procesarTrama'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='trama' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirIp' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='procesarTramaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:datosGps'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='datosGps'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='altitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='btsId' type='xs:string'/>
+     <xs:element minOccurs='0' name='cabecera' type='xs:string'/>
+     <xs:element minOccurs='0' name='cellId' type='xs:string'/>
+     <xs:element minOccurs='0' name='ciudad' type='xs:string'/>
+     <xs:element minOccurs='0' name='codigoRespuesta' type='xs:string'/>
+     <xs:element minOccurs='0' name='cola' type='xs:string'/>
+     <xs:element minOccurs='0' name='curso' type='xs:string'/>
+     <xs:element minOccurs='0' name='datoAuxiliar' type='xs:string'/>
+     <xs:element minOccurs='0' name='datosAdicionales' type='xs:string'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='datosAuxiliares' nillable='true' type='xs:anyType'/>
+     <xs:element minOccurs='0' name='departamento' type='xs:string'/>
+     <xs:element minOccurs='0' name='direccion' type='xs:string'/>
+     <xs:element minOccurs='0' name='fecha' type='xs:string'/>
+     <xs:element minOccurs='0' name='funcion' type='xs:string'/>
+     <xs:element minOccurs='0' name='hwSerial' type='xs:string'/>
+     <xs:element minOccurs='0' name='idServicio' type='xs:long'/>
+     <xs:element minOccurs='0' name='indLatitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='indLongitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='ip' type='xs:string'/>
+     <xs:element minOccurs='0' name='ipMiniSpia' type='xs:string'/>
+     <xs:element name='kilometros' type='xs:int'/>
+     <xs:element minOccurs='0' name='latitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='latitudFinal' type='xs:long'/>
+     <xs:element minOccurs='0' name='longitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='longitudFinal' type='xs:long'/>
+     <xs:element minOccurs='0' name='mileage' type='xs:string'/>
+     <xs:element minOccurs='0' name='numeroSecuencia' type='xs:string'/>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element name='pinDestino' type='xs:int'/>
+     <xs:element minOccurs='0' name='responder' type='xs:string'/>
+     <xs:element minOccurs='0' name='satelites' type='xs:string'/>
+     <xs:element minOccurs='0' name='simCard' type='xs:string'/>
+     <xs:element minOccurs='0' name='tamanoHex' type='xs:string'/>
+     <xs:element minOccurs='0' name='tamanoParametro' type='xs:string'/>
+     <xs:element minOccurs='0' name='tipoApp' type='xs:string'/>
+     <xs:element name='tipoTrama' type='xs:int'/>
+     <xs:element minOccurs='0' name='tramaGps' type='xs:string'/>
+     <xs:element minOccurs='0' name='tramaOriginal' type='xs:string'/>
+     <xs:element minOccurs='0' name='velocidad' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovilCien'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='nomCliente' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirCliente' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomBarrio' type='xs:string'/>
+     <xs:element name='codZonarloc' type='xs:int'/>
+     <xs:element name='idServicio' type='xs:int'/>
+     <xs:element name='telCliente' type='xs:long'/>
+     <xs:element name='numeroVale' type='xs:int'/>
+     <xs:element name='codCiudad' type='xs:int'/>
+     <xs:element name='valLatitud' type='xs:double'/>
+     <xs:element name='valLongitud' type='xs:double'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovilCienResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:datosMovilCienDTO'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='datosMovilCienDTO'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='codCiudades' type='xs:int'/>
+     <xs:element minOccurs='0' name='docConductor' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomConductor' type='xs:string'/>
+     <xs:element minOccurs='0' name='numPlacaveh' type='xs:string'/>
+     <xs:element name='valNummovil' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='obtenerRl'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='pin' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='obtenerRlResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:datosRadiolocalizador'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='datosRadiolocalizador'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='apePropietario' type='xs:string'/>
+     <xs:element name='codCiudad' type='xs:int'/>
+     <xs:element minOccurs='0' name='datoAuxiliar' type='xs:string'/>
+     <xs:element minOccurs='0' name='diaHrFalso' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='direccionServicio' type='xs:string'/>
+     <xs:element minOccurs='0' name='direccionServicioCompleto' type='xs:string'/>
+     <xs:element name='distTrabPostu' type='xs:int'/>
+     <xs:element minOccurs='0' name='distancia' type='xs:string'/>
+     <xs:element name='distanciaSrv' type='xs:double'/>
+     <xs:element minOccurs='0' name='docConductor' type='xs:string'/>
+     <xs:element minOccurs='0' name='docPropietario' type='xs:string'/>
+     <xs:element name='enviarCancelacion' type='xs:boolean'/>
+     <xs:element name='estado' type='xs:int'/>
+     <xs:element minOccurs='0' name='fechaQrt' type='xs:string'/>
+     <xs:element minOccurs='0' name='fechaRefrescamiento' type='xs:string'/>
+     <xs:element minOccurs='0' name='fechaUltimoEvento' type='xs:string'/>
+     <xs:element minOccurs='0' name='funcion' type='xs:string'/>
+     <xs:element minOccurs='0' name='funcionServicio' type='xs:string'/>
+     <xs:element name='hrFalsos' type='xs:int'/>
+     <xs:element name='idServicio' type='xs:long'/>
+     <xs:element minOccurs='0' name='idServicioCompleto' type='xs:long'/>
+     <xs:element name='indAeropuerto' type='xs:int'/>
+     <xs:element name='indAuxiliar' type='xs:int'/>
+     <xs:element minOccurs='0' name='indClaseveh' type='xs:int'/>
+     <xs:element name='indDistPostGeneral' type='xs:int'/>
+     <xs:element name='indGps' type='xs:int'/>
+     <xs:element name='indModipay' type='xs:int'/>
+     <xs:element name='indTrabPostu' type='xs:int'/>
+     <xs:element name='indTrabZonas' type='xs:int'/>
+     <xs:element name='indTransfer' type='xs:int'/>
+     <xs:element name='indVerificacion' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='indiceProyecto' type='xs:string'/>
+     <xs:element minOccurs='0' name='ip' type='xs:string'/>
+     <xs:element minOccurs='0' name='ipMiniSpia' type='xs:string'/>
+     <xs:element minOccurs='0' name='latitud' type='xs:double'/>
+     <xs:element name='latitudSrv' type='xs:double'/>
+     <xs:element minOccurs='0' name='leyenda' type='xs:string'/>
+     <xs:element minOccurs='0' name='linea' type='xs:string'/>
+     <xs:element minOccurs='0' name='longitud' type='xs:double'/>
+     <xs:element name='longitudSrv' type='xs:double'/>
+     <xs:element minOccurs='0' name='marca' type='xs:string'/>
+     <xs:element minOccurs='0' name='mensajeAusuario' type='xs:string'/>
+     <xs:element minOccurs='0' name='modelo' type='xs:short'/>
+     <xs:element minOccurs='0' name='nomClientes' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomConductor' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomPropietario' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomZona' type='xs:string'/>
+     <xs:element minOccurs='0' name='numeroVale' type='xs:long'/>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element minOccurs='0' name='placa' type='xs:string'/>
+     <xs:element minOccurs='0' name='precio' type='xs:string'/>
+     <xs:element minOccurs='0' name='razonError' type='xs:string'/>
+     <xs:element name='reintento' type='xs:int'/>
+     <xs:element name='retransmisiones' type='xs:int'/>
+     <xs:element minOccurs='0' name='serverAddress' type='xs:string'/>
+     <xs:element minOccurs='0' name='serverAddressMiniSpia' type='xs:string'/>
+     <xs:element name='subestado' type='xs:int'/>
+     <xs:element name='telIngreso' type='xs:long'/>
+     <xs:element minOccurs='0' name='telTaxista' type='xs:long'/>
+     <xs:element minOccurs='0' name='telefono' type='xs:long'/>
+     <xs:element minOccurs='0' name='tiempoQrt' type='xs:string'/>
+     <xs:element minOccurs='0' name='tramaServicio' type='xs:string'/>
+     <xs:element name='turno' type='xs:int'/>
+     <xs:element minOccurs='0' name='ubicacionMovil' type='xs:string'/>
+     <xs:element minOccurs='0' name='ultimoEvento' type='xs:dateTime'/>
+     <xs:element name='zona' type='xs:int'/>
+     <xs:element name='zonaEnturnado' type='xs:int'/>
+     <xs:element name='zonaServicio' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='cancelarServicioCali'>
+    <xs:sequence>
+     <xs:element name='valNummovil' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='cancelarServicioCaliResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovil'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='servicio' type='tns:servicioTaxi'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='servicioTaxi'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='celClientes' type='xs:long'/>
+     <xs:element minOccurs='0' name='codCiudades' type='xs:int'/>
+     <xs:element minOccurs='0' name='codCiumovil' type='xs:int'/>
+     <xs:element name='codFrecuenc' type='xs:int'/>
+     <xs:element name='codUsualocu' type='xs:int'/>
+     <xs:element name='codUsuarece' type='xs:int'/>
+     <xs:element minOccurs='0' name='codUsuarios' type='xs:int'/>
+     <xs:element name='codZonaciud' type='xs:int'/>
+     <xs:element name='codZonarloc' type='xs:int'/>
+     <xs:element minOccurs='0' name='dirClienivr' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirClientes' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirCompleta' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirIncomple' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirRadioloc' type='xs:string'/>
+     <xs:element minOccurs='0' name='estServicio' type='xs:int'/>
+     <xs:element name='estServiivr' type='xs:int'/>
+     <xs:element name='estadoL500' type='xs:short'/>
+     <xs:element minOccurs='0' name='estadoServicioLocucion' type='xs:string'/>
+     <xs:element minOccurs='0' name='fecLlamadax' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='fecReservas' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='fecServicio' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='horReservas' type='xs:dateTime'/>
+     <xs:element name='indReservas' type='xs:unsignedShort'/>
+     <xs:element minOccurs='0' name='indServvale' type='xs:unsignedShort'/>
+     <xs:element minOccurs='0' name='mensajes' type='tns:mensajesLocucion'/>
+     <xs:element maxOccurs='unbounded' minOccurs='0' name='movilServicioCollection' nillable='true' type='tns:movilServicio'/>
+     <xs:element minOccurs='0' name='nomBarriosx' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomClientes' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomEmpreval' type='xs:string'/>
+     <xs:element minOccurs='0' name='numIteracio' type='xs:int'/>
+     <xs:element minOccurs='0' name='numLlamadax' type='xs:long'/>
+     <xs:element minOccurs='0' name='numPlacaveh' type='xs:string'/>
+     <xs:element minOccurs='0' name='numProcesox' type='xs:long'/>
+     <xs:element minOccurs='0' name='numServicio' type='xs:int'/>
+     <xs:element name='reintentoPostulados' type='xs:int'/>
+     <xs:element name='telClientes' type='xs:long'/>
+     <xs:element minOccurs='0' name='telIngresox' type='xs:long'/>
+     <xs:element minOccurs='0' name='valComment1' type='xs:string'/>
+     <xs:element name='valIndicqsl' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='valLatitudx' type='xs:double'/>
+     <xs:element minOccurs='0' name='valLongitud' type='xs:double'/>
+     <xs:element minOccurs='0' name='valMensajex' type='xs:string'/>
+     <xs:element minOccurs='0' name='valMovilesx' type='xs:string'/>
+     <xs:element minOccurs='0' name='valNumevale' type='xs:int'/>
+     <xs:element minOccurs='0' name='valNummovil' type='xs:int'/>
+     <xs:element name='valNumtaxis' type='xs:int'/>
+     <xs:element minOccurs='0' name='valTiposerv' type='xs:string'/>
+     <xs:element minOccurs='0' name='valTipovehi' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='mensajesLocucion'>
+    <xs:sequence>
+     <xs:element name='codUsuarios' type='xs:long'/>
+     <xs:element minOccurs='0' name='evento' type='xs:string'/>
+     <xs:element minOccurs='0' name='fecha' type='xs:dateTime'/>
+     <xs:element minOccurs='0' name='hora' type='xs:string'/>
+     <xs:element name='idMensaje' type='xs:int'/>
+     <xs:element minOccurs='0' name='movil' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomLineaveh' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomMarcaveh' type='xs:string'/>
+     <xs:element name='numeroFrecuencia' type='xs:int'/>
+     <xs:element minOccurs='0' name='placa' type='xs:string'/>
+     <xs:element minOccurs='0' name='solicitud' type='xs:string'/>
+     <xs:element minOccurs='0' name='texto' type='xs:string'/>
+     <xs:element name='valModelveh' type='xs:short'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='movilServicio'>
+    <xs:sequence>
+     <xs:element name='cumple' type='xs:boolean'/>
+     <xs:element minOccurs='0' name='fec_notifica' type='xs:string'/>
+     <xs:element minOccurs='0' name='hor_notifica' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomLineaveh' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomMarcaveh' type='xs:string'/>
+     <xs:element minOccurs='0' name='notificacion' type='xs:string'/>
+     <xs:element name='numeroMovil' type='xs:int'/>
+     <xs:element minOccurs='0' name='placaMovil' type='xs:string'/>
+     <xs:element name='valModelveh' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovilResponse'>
+    <xs:sequence>
+     <xs:element name='return' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarPlaca'>
+    <xs:sequence>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element minOccurs='0' name='nuevaPlaca' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarPlacaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarDatos'>
+    <xs:sequence>
+     <xs:element name='pin' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarDatosResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarFormaTrabajoIndividual'>
+    <xs:sequence>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element name='porZonas' type='xs:int'/>
+     <xs:element name='porPostu' type='xs:int'/>
+     <xs:element name='distPostu' type='xs:int'/>
+     <xs:element name='cargarFormaTrabajoBatch' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='modificarFormaTrabajoIndividualResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='funcionalidadHibrido'>
+    <xs:sequence>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element name='indAuxiliar' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='funcionalidadHibridoResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='enviarRadiolocalizador'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='gestion' type='xs:string'/>
+     <xs:element name='pin' type='xs:int'/>
+     <xs:element name='estado' type='xs:int'/>
+     <xs:element name='subEstado' type='xs:int'/>
+     <xs:element minOccurs='0' name='funcion' type='xs:string'/>
+     <xs:element minOccurs='0' name='trama' type='xs:string'/>
+     <xs:element name='nuevoEstado' type='xs:int'/>
+     <xs:element name='nuevoSubEstado' type='xs:int'/>
+     <xs:element name='cambiarEstado' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='enviarRadiolocalizadorResponse'>
+    <xs:sequence>
+     <xs:element name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='movilesMemoria'>
+    <xs:sequence>
+     <xs:element name='parameter' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='movilesMemoriaResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='timeOut'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='st' type='tns:servicioTaxi'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='timeOutResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='cancelarServicio'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='st' type='tns:servicioTaxi'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='cancelarServicioResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovilCali'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='nomCliente' type='xs:string'/>
+     <xs:element minOccurs='0' name='dirCliente' type='xs:string'/>
+     <xs:element minOccurs='0' name='nomBarrio' type='xs:string'/>
+     <xs:element name='codZonarloc' type='xs:int'/>
+     <xs:element name='idServicio' type='xs:int'/>
+     <xs:element name='telCliente' type='xs:long'/>
+     <xs:element name='numeroVale' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='buscarMovilCaliResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='listadoEnturnados'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='listadoEnturnadosResponse'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='configurarParametrosRadioloc'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='valor' type='xs:string'/>
+     <xs:element minOccurs='0' name='parametro' type='xs:string'/>
+     <xs:element name='codCiudad' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='configurarParametrosRadiolocResponse'>
+    <xs:sequence>
+     <xs:element name='return' type='xs:boolean'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='imprimirListadoDisponibles'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='imprimirListadoDisponiblesResponse'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='listaVariables'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='listaVariablesResponse'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='listadoEnturnadosZona'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='zona' type='xs:string'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='listadoEnturnadosZonaResponse'>
+    <xs:sequence/>
+   </xs:complexType>
+   <xs:complexType name='ultimoDatoRL'>
+    <xs:sequence>
+     <xs:element name='pin' type='xs:int'/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name='ultimoDatoRLResponse'>
+    <xs:sequence>
+     <xs:element minOccurs='0' name='return' type='tns:datosRadiolocalizador'/>
+    </xs:sequence>
+   </xs:complexType>
+  </xs:schema>
+ </types>
+ <message name='WebServiceRadiolocalizador_modificarDatos'>
+  <part element='tns:modificarDatos' name='modificarDatos'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_cancelarServicioCali'>
+  <part element='tns:cancelarServicioCali' name='cancelarServicioCali'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_modificarFormaTrabajoIndividual'>
+  <part element='tns:modificarFormaTrabajoIndividual' name='modificarFormaTrabajoIndividual'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_modificarDatosResponse'>
+  <part element='tns:modificarDatosResponse' name='modificarDatosResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_timeOut'>
+  <part element='tns:timeOut' name='timeOut'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_cancelarServicioResponse'>
+  <part element='tns:cancelarServicioResponse' name='cancelarServicioResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovilCienResponse'>
+  <part element='tns:buscarMovilCienResponse' name='buscarMovilCienResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_ultimoDatoRLResponse'>
+  <part element='tns:ultimoDatoRLResponse' name='ultimoDatoRLResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listadoEnturnadosZona'>
+  <part element='tns:listadoEnturnadosZona' name='listadoEnturnadosZona'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovil'>
+  <part element='tns:buscarMovil' name='buscarMovil'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_timeOutResponse'>
+  <part element='tns:timeOutResponse' name='timeOutResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_configurarParametrosRadioloc'>
+  <part element='tns:configurarParametrosRadioloc' name='configurarParametrosRadioloc'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_obtenerRlResponse'>
+  <part element='tns:obtenerRlResponse' name='obtenerRlResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listadoEnturnados'>
+  <part element='tns:listadoEnturnados' name='listadoEnturnados'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_configurarParametrosRadiolocResponse'>
+  <part element='tns:configurarParametrosRadiolocResponse' name='configurarParametrosRadiolocResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_obtenerRl'>
+  <part element='tns:obtenerRl' name='obtenerRl'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listaVariablesResponse'>
+  <part element='tns:listaVariablesResponse' name='listaVariablesResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_cancelarServicioCaliResponse'>
+  <part element='tns:cancelarServicioCaliResponse' name='cancelarServicioCaliResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovilCien'>
+  <part element='tns:buscarMovilCien' name='buscarMovilCien'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_funcionalidadHibrido'>
+  <part element='tns:funcionalidadHibrido' name='funcionalidadHibrido'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_cancelarServicio'>
+  <part element='tns:cancelarServicio' name='cancelarServicio'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_movilesMemoria'>
+  <part element='tns:movilesMemoria' name='movilesMemoria'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_ultimoDatoRL'>
+  <part element='tns:ultimoDatoRL' name='ultimoDatoRL'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_modificarPlaca'>
+  <part element='tns:modificarPlaca' name='modificarPlaca'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listaVariables'>
+  <part element='tns:listaVariables' name='listaVariables'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listadoEnturnadosZonaResponse'>
+  <part element='tns:listadoEnturnadosZonaResponse' name='listadoEnturnadosZonaResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovilCaliResponse'>
+  <part element='tns:buscarMovilCaliResponse' name='buscarMovilCaliResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_procesarTrama'>
+  <part element='tns:procesarTrama' name='procesarTrama'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_movilesMemoriaResponse'>
+  <part element='tns:movilesMemoriaResponse' name='movilesMemoriaResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_imprimirListadoDisponiblesResponse'>
+  <part element='tns:imprimirListadoDisponiblesResponse' name='imprimirListadoDisponiblesResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovilResponse'>
+  <part element='tns:buscarMovilResponse' name='buscarMovilResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_imprimirListadoDisponibles'>
+  <part element='tns:imprimirListadoDisponibles' name='imprimirListadoDisponibles'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_enviarRadiolocalizadorResponse'>
+  <part element='tns:enviarRadiolocalizadorResponse' name='enviarRadiolocalizadorResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_funcionalidadHibridoResponse'>
+  <part element='tns:funcionalidadHibridoResponse' name='funcionalidadHibridoResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_modificarPlacaResponse'>
+  <part element='tns:modificarPlacaResponse' name='modificarPlacaResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_procesarTramaResponse'>
+  <part element='tns:procesarTramaResponse' name='procesarTramaResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_listadoEnturnadosResponse'>
+  <part element='tns:listadoEnturnadosResponse' name='listadoEnturnadosResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_modificarFormaTrabajoIndividualResponse'>
+  <part element='tns:modificarFormaTrabajoIndividualResponse' name='modificarFormaTrabajoIndividualResponse'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_enviarRadiolocalizador'>
+  <part element='tns:enviarRadiolocalizador' name='enviarRadiolocalizador'></part>
+ </message>
+ <message name='WebServiceRadiolocalizador_buscarMovilCali'>
+  <part element='tns:buscarMovilCali' name='buscarMovilCali'></part>
+ </message>
+ <portType name='WebServiceRadiolocalizador'>
+  <operation name='buscarMovil' parameterOrder='buscarMovil'>
+   <input message='tns:WebServiceRadiolocalizador_buscarMovil'></input>
+   <output message='tns:WebServiceRadiolocalizador_buscarMovilResponse'></output>
+  </operation>
+  <operation name='buscarMovilCali' parameterOrder='buscarMovilCali'>
+   <input message='tns:WebServiceRadiolocalizador_buscarMovilCali'></input>
+   <output message='tns:WebServiceRadiolocalizador_buscarMovilCaliResponse'></output>
+  </operation>
+  <operation name='buscarMovilCien' parameterOrder='buscarMovilCien'>
+   <input message='tns:WebServiceRadiolocalizador_buscarMovilCien'></input>
+   <output message='tns:WebServiceRadiolocalizador_buscarMovilCienResponse'></output>
+  </operation>
+  <operation name='cancelarServicio' parameterOrder='cancelarServicio'>
+   <input message='tns:WebServiceRadiolocalizador_cancelarServicio'></input>
+   <output message='tns:WebServiceRadiolocalizador_cancelarServicioResponse'></output>
+  </operation>
+  <operation name='cancelarServicioCali' parameterOrder='cancelarServicioCali'>
+   <input message='tns:WebServiceRadiolocalizador_cancelarServicioCali'></input>
+   <output message='tns:WebServiceRadiolocalizador_cancelarServicioCaliResponse'></output>
+  </operation>
+  <operation name='configurarParametrosRadioloc' parameterOrder='configurarParametrosRadioloc'>
+   <input message='tns:WebServiceRadiolocalizador_configurarParametrosRadioloc'></input>
+   <output message='tns:WebServiceRadiolocalizador_configurarParametrosRadiolocResponse'></output>
+  </operation>
+  <operation name='enviarRadiolocalizador' parameterOrder='enviarRadiolocalizador'>
+   <input message='tns:WebServiceRadiolocalizador_enviarRadiolocalizador'></input>
+   <output message='tns:WebServiceRadiolocalizador_enviarRadiolocalizadorResponse'></output>
+  </operation>
+  <operation name='funcionalidadHibrido' parameterOrder='funcionalidadHibrido'>
+   <input message='tns:WebServiceRadiolocalizador_funcionalidadHibrido'></input>
+   <output message='tns:WebServiceRadiolocalizador_funcionalidadHibridoResponse'></output>
+  </operation>
+  <operation name='imprimirListadoDisponibles' parameterOrder='imprimirListadoDisponibles'>
+   <input message='tns:WebServiceRadiolocalizador_imprimirListadoDisponibles'></input>
+   <output message='tns:WebServiceRadiolocalizador_imprimirListadoDisponiblesResponse'></output>
+  </operation>
+  <operation name='listaVariables' parameterOrder='listaVariables'>
+   <input message='tns:WebServiceRadiolocalizador_listaVariables'></input>
+   <output message='tns:WebServiceRadiolocalizador_listaVariablesResponse'></output>
+  </operation>
+  <operation name='listadoEnturnados' parameterOrder='listadoEnturnados'>
+   <input message='tns:WebServiceRadiolocalizador_listadoEnturnados'></input>
+   <output message='tns:WebServiceRadiolocalizador_listadoEnturnadosResponse'></output>
+  </operation>
+  <operation name='listadoEnturnadosZona' parameterOrder='listadoEnturnadosZona'>
+   <input message='tns:WebServiceRadiolocalizador_listadoEnturnadosZona'></input>
+   <output message='tns:WebServiceRadiolocalizador_listadoEnturnadosZonaResponse'></output>
+  </operation>
+  <operation name='modificarDatos' parameterOrder='modificarDatos'>
+   <input message='tns:WebServiceRadiolocalizador_modificarDatos'></input>
+   <output message='tns:WebServiceRadiolocalizador_modificarDatosResponse'></output>
+  </operation>
+  <operation name='modificarFormaTrabajoIndividual' parameterOrder='modificarFormaTrabajoIndividual'>
+   <input message='tns:WebServiceRadiolocalizador_modificarFormaTrabajoIndividual'></input>
+   <output message='tns:WebServiceRadiolocalizador_modificarFormaTrabajoIndividualResponse'></output>
+  </operation>
+  <operation name='modificarPlaca' parameterOrder='modificarPlaca'>
+   <input message='tns:WebServiceRadiolocalizador_modificarPlaca'></input>
+   <output message='tns:WebServiceRadiolocalizador_modificarPlacaResponse'></output>
+  </operation>
+  <operation name='movilesMemoria' parameterOrder='movilesMemoria'>
+   <input message='tns:WebServiceRadiolocalizador_movilesMemoria'></input>
+   <output message='tns:WebServiceRadiolocalizador_movilesMemoriaResponse'></output>
+  </operation>
+  <operation name='obtenerRl' parameterOrder='obtenerRl'>
+   <input message='tns:WebServiceRadiolocalizador_obtenerRl'></input>
+   <output message='tns:WebServiceRadiolocalizador_obtenerRlResponse'></output>
+  </operation>
+  <operation name='procesarTrama' parameterOrder='procesarTrama'>
+   <input message='tns:WebServiceRadiolocalizador_procesarTrama'></input>
+   <output message='tns:WebServiceRadiolocalizador_procesarTramaResponse'></output>
+  </operation>
+  <operation name='timeOut' parameterOrder='timeOut'>
+   <input message='tns:WebServiceRadiolocalizador_timeOut'></input>
+   <output message='tns:WebServiceRadiolocalizador_timeOutResponse'></output>
+  </operation>
+  <operation name='ultimoDatoRL' parameterOrder='ultimoDatoRL'>
+   <input message='tns:WebServiceRadiolocalizador_ultimoDatoRL'></input>
+   <output message='tns:WebServiceRadiolocalizador_ultimoDatoRLResponse'></output>
+  </operation>
+ </portType>
+ <binding name='WebServiceRadiolocalizadorBinding' type='tns:WebServiceRadiolocalizador'>
+  <soap:binding style='document' transport='http://schemas.xmlsoap.org/soap/http'/>
+  <operation name='buscarMovil'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='buscarMovilCali'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='buscarMovilCien'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='cancelarServicio'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='cancelarServicioCali'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='configurarParametrosRadioloc'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='enviarRadiolocalizador'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='funcionalidadHibrido'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='imprimirListadoDisponibles'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='listaVariables'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='listadoEnturnados'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='listadoEnturnadosZona'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='modificarDatos'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='modificarFormaTrabajoIndividual'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='modificarPlaca'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='movilesMemoria'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='obtenerRl'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='procesarTrama'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='timeOut'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+  <operation name='ultimoDatoRL'>
+   <soap:operation soapAction=''/>
+   <input>
+    <soap:body use='literal'/>
+   </input>
+   <output>
+    <soap:body use='literal'/>
+   </output>
+  </operation>
+ </binding>
+ <service name='WebServiceRadiolocalizadorService'>
+  <port binding='tns:WebServiceRadiolocalizadorBinding' name='WebServiceRadiolocalizadorPort'>
+   <soap:address location='http://srvapp-central.losunos.net:8080/WFuncionesServicios/WebServiceRadiolocalizador'/>
+  </port>
+ </service>
+</definitions>

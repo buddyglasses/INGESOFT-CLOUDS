@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://srvapp-central.losunos.net:8080/WFuncionesServicios/WebServiceRadiolocalizador?wsdl" uri="xml-resources/web-service-references/WebServiceRadiolocalizador/wsdl/srvapp-central.losunos.net_8080/WFuncionesServicios/WebServiceRadiolocalizador.wsdl"/>
+    <system systemId="http://192.168.1.1:8080/EsperApp/AsignarTurnos/AsignarTurnos?wsdl" uri="xml-resources/web-service-references/AsignarTurnos/wsdl/192.168.1.1_8080/EsperApp/AsignarTurnos/AsignarTurnos.wsdl"/>
+    <system systemId="http://192.168.40.1:8080/EsperApp/AsignarTurnos/AsignarTurnos?wsdl" uri="xml-resources/web-service-references/AsignarTurnos_1/wsdl/192.168.40.1_8080/EsperApp/AsignarTurnos/AsignarTurnos.wsdl"/>
+</catalog>
